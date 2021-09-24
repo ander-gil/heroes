@@ -39,8 +39,10 @@
         </button>
 
         <span class="spicer"></span>
-
-        <button mat-button>logout</button>
+        <span>{{auth.usuario}}</span>
+        <button mat-button (click)="logout()">
+          logout
+        </button>
       </mat-toolbar>
 
       <div class="container">

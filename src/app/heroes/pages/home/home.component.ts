@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,16 @@ import { Component, OnInit } from '@angular/core';
   `
   ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent  {
 
-  constructor() { }
+  get auth(){
+    return this.authservice.Auth;  // se llama el metodo get que esta en el servicio de auth
+  }
+  constructor(private router: Router,
+              private authservice: AuthService) { }
 
-  ngOnInit(): void {
+  logout(){
+    this.router.navigate(['./auth'])
   }
 
 }
